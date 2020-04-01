@@ -1,0 +1,37 @@
+#注意：如果要修改配置文件，不要在这里修改。直接在git项目中修改配置，地址： http://192.168.0.247/baiwang/config-files.git
+#云平台所有项目的配置文件在output目录下
+#配置文件命名规则：  项目名-分支。如bwcloud-dev.properties即是bwcloud服务的开发环境
+spring:
+  application:
+    name: service-jx-jxmailacquisition
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server #配置中心的id名称。不要修改，否则无法找到配置中心的服务
+      profile: ${spring.profiles.active}    #如果是本地开发，把这个变量名修改成dev
+      username: user
+      password: baiwang1234
+      label: master
+      name: jxmailacquisition #远程用来存放配置文件的 git的分支
+  mvc:
+    view:
+      prefix: /html
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+  client:
+    service-url:
+      defaultZone: http://registerserver-pool.${DOMAIN}:8889/eureka #如果是本地开发，就用这个eureka中心：http://registerserver-pool.dev.baiwang-inner.com:8889/eureka
+endpoints:
+  enabled: true
+  loggers:
+    sensitive: false
+baiwang:
+  digestAop:
+    enable: true
+
+#启动端口
+server:
+  port: 10257
