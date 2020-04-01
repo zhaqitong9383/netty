@@ -36,3 +36,14 @@ source ~/.bash_profile
 ![Windows设置环境变量](doc/assets/set_env_domain.png)
 
 ![Windows设置环境变量](doc/assets/set_env_spring_profiles_active.png)
+
+### 3 配置文件
+
+全局配置文件：
+```bash
+jxmailacquisition-startup/src/main/resources/bootstrap.yml
+```
+
+环境配置文件：
+
+[config-files](http://git.51baiwang.com/baiwang/config-files/blob/master/output/jxmailacquisition-dev.yml)
