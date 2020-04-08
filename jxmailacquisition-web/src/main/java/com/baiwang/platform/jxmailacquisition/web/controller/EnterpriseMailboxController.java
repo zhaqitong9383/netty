@@ -8,18 +8,21 @@ import com.baiwang.platform.jxmailacquisition.service.CollectMailboxServices;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Profile({"default", "dev"})
 @Api("发票采集/邮箱采集/企业邮箱管理")
 @RequestMapping("enterpriseMailbox")
 @RestController
-public class EnterpriseMailbox {
+public class EnterpriseMailboxController {
     @Autowired
     private CollectMailboxServices collectMailboxServices;
 
@@ -62,4 +65,20 @@ public class EnterpriseMailbox {
         return bwJsonResult;
     }
 
+    /**
+     * 自定义Mapper样例
+     *
+     * @param idString
+     * @return
+     */
+    @GetMapping("queryEmailByIdString/{idString}")
+    public BWJsonResult<List<CollectMailbox>> queryEmailByIdString(@PathVariable("idString") String idString) {
+        List<Long> idList = Arrays.stream(StringUtils.split(idString, ",")).map(el -> Long.valueOf(el)).collect(Collectors.toList());
+        List<CollectMailbox> result = collectMailboxServices.queryEmailByIdList(idList);
+        BWJsonResult<List<CollectMailbox>> bwJsonResult = new BWJsonResult(result);
+        bwJsonResult.setSuccess(true);
+        bwJsonResult.setTotal(result.size());
+        bwJsonResult.setMessage("查询成功");
+        return bwJsonResult;
+    }
 }

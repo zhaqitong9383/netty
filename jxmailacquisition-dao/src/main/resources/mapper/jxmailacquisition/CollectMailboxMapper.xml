@@ -38,4 +38,12 @@
         id, tenant_id, org_id, user_id, email_address, email_password, email_add_username, email_add_datetime, enterprise_mailbox, last_login_username, last_login_datetime, last_collect_datetime, def1, def2, def3, def4, def5, def6, def7, def8, def9, def10, creater, create_datetime, modify_user, modify_datetime, deleted
     </sql>
 
+    <select id="queryEmailByIdList" parameterType="java.util.List" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from collect_mailbox
+        <foreach collection="idList" open="where id in (" item="id" separator="," close=")">
+            #{id}
+        </foreach>
+    </select>
 </mapper>
