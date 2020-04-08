@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.baiwang.cloud.common.model.BWJsonResult;
 import com.baiwang.cloud.logaop.annotation.SystemServiceLog;
 import com.baiwang.platform.jxmailacquisition.common.entity.CollectMailbox;
+import com.baiwang.platform.jxmailacquisition.common.model.MailboxQueryMode;
 import com.baiwang.platform.jxmailacquisition.service.CollectMailboxServices;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -50,7 +51,7 @@ public class EnterpriseMailboxController {
     @PostMapping("queryEmail")
     @ApiOperation(value = "根据条件查询企业邮箱", notes = "查询功能")
     @SystemServiceLog(logType = "controller", modelName = "邮箱归集", businessCode = "queryEmail", action = "查询企业邮箱信息")
-    public BWJsonResult<List<CollectMailbox>> queryEmail(@RequestBody CollectMailbox collectMailbox) {
+    public BWJsonResult<List<CollectMailbox>> queryEmail(@RequestBody MailboxQueryMode mailboxQueryMode) {
         return null;
     }
 
