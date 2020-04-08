@@ -1,11 +1,9 @@
 package com.baiwang.platform.jxmailacquisition.common.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
-
 import java.util.Date;
-
 import com.baomidou.mybatisplus.annotation.TableId;
-import com.baiwang.cloud.common.model.BaseJsonModel;
+import java.io.Serializable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -21,10 +19,10 @@ import lombok.experimental.Accessors;
  * @since 2020-04-08
  */
 @Data
-@EqualsAndHashCode(callSuper = true)
+@EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@ApiModel(value = "CollectorMailboxInvoice对象", description = "进项发票归集器，发票信息表")
-public class CollectorMailboxInvoice extends BaseJsonModel {
+@ApiModel(value="CollectorMailboxInvoice对象", description="进项发票归集器，发票信息表")
+public class CollectorMailboxInvoice implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

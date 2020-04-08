@@ -4,33 +4,33 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.baiwang.platform.jxmailacquisition.common.entity.CollectMailbox">
-        <id column="id" property="id"/>
-        <result column="tenant_id" property="tenantId"/>
-        <result column="org_id" property="orgId"/>
-        <result column="user_id" property="userId"/>
-        <result column="email_address" property="emailAddress"/>
-        <result column="email_password" property="emailPassword"/>
-        <result column="email_add_username" property="emailAddUsername"/>
-        <result column="email_add_datetime" property="emailAddDatetime"/>
-        <result column="enterprise_mailbox" property="enterpriseMailbox"/>
-        <result column="last_login_username" property="lastLoginUsername"/>
-        <result column="last_login_datetime" property="lastLoginDatetime"/>
-        <result column="last_collect_datetime" property="lastCollectDatetime"/>
-        <result column="def1" property="def1"/>
-        <result column="def2" property="def2"/>
-        <result column="def3" property="def3"/>
-        <result column="def4" property="def4"/>
-        <result column="def5" property="def5"/>
-        <result column="def6" property="def6"/>
-        <result column="def7" property="def7"/>
-        <result column="def8" property="def8"/>
-        <result column="def9" property="def9"/>
-        <result column="def10" property="def10"/>
-        <result column="creater" property="creater"/>
-        <result column="create_datetime" property="createDatetime"/>
-        <result column="modify_user" property="modifyUser"/>
-        <result column="modify_datetime" property="modifyDatetime"/>
-        <result column="deleted" property="deleted"/>
+        <id column="id" property="id" />
+        <result column="tenant_id" property="tenantId" />
+        <result column="org_id" property="orgId" />
+        <result column="user_id" property="userId" />
+        <result column="email_address" property="emailAddress" />
+        <result column="email_password" property="emailPassword" />
+        <result column="email_add_username" property="emailAddUsername" />
+        <result column="email_add_datetime" property="emailAddDatetime" />
+        <result column="enterprise_mailbox" property="enterpriseMailbox" />
+        <result column="last_login_username" property="lastLoginUsername" />
+        <result column="last_login_datetime" property="lastLoginDatetime" />
+        <result column="last_collect_datetime" property="lastCollectDatetime" />
+        <result column="def1" property="def1" />
+        <result column="def2" property="def2" />
+        <result column="def3" property="def3" />
+        <result column="def4" property="def4" />
+        <result column="def5" property="def5" />
+        <result column="def6" property="def6" />
+        <result column="def7" property="def7" />
+        <result column="def8" property="def8" />
+        <result column="def9" property="def9" />
+        <result column="def10" property="def10" />
+        <result column="creater" property="creater" />
+        <result column="create_datetime" property="createDatetime" />
+        <result column="modify_user" property="modifyUser" />
+        <result column="modify_datetime" property="modifyDatetime" />
+        <result column="deleted" property="deleted" />
     </resultMap>
 
     <!-- 通用查询结果列 -->

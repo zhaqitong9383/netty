@@ -127,7 +127,7 @@ public class CodeGeneratorDemo {
         StrategyConfig strategy = new StrategyConfig();
         strategy.setNaming(NamingStrategy.underline_to_camel);
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
-        strategy.setSuperEntityClass("com.baiwang.cloud.common2.model.BaseJsonModel");
+//        strategy.setSuperEntityClass("com.baiwang.cloud.common2.model.BaseJsonModel");
         strategy.setEntityLombokModel(true);
         strategy.setRestControllerStyle(true);
         // 公共父类
