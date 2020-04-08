@@ -11,8 +11,10 @@ import com.baomidou.mybatisplus.generator.config.po.TableInfo;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.byy.gegerator.MyFreemarkerTemplateEngine;
 import com.byy.gegerator.RewriteOutFiles;
+
 import java.util.HashMap;
 import java.util.Scanner;
+
 import com.baomidou.mybatisplus.generator.config.rules.DateType;
 
 /**
@@ -62,9 +64,9 @@ public class CodeGeneratorDemo {
         //实体命名方式
         //gc.setEntityName("%sEntity");
         //mapper 命名方式
-        //gc.setMapperName("%sDao");
+        gc.setMapperName("%sMapper");
         //Mapper xml 命名方式
-       // gc.setXmlName("%sMapper");
+        gc.setXmlName("%sMapper");
         //service 命名方式
         gc.setServiceName("%sServices");
 
@@ -81,10 +83,10 @@ public class CodeGeneratorDemo {
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://192.168.6.141:3306/bwadmin?useUnicode=true&useSSL=false&characterEncoding=utf8");
+        dsc.setUrl("jdbc:mysql://192.168.6.62:3306/jxstanded?useUnicode=true&useSSL=false&characterEncoding=utf8");
         dsc.setDriverName("com.mysql.jdbc.Driver");
         dsc.setUsername("root");
-        dsc.setPassword("localTest1717");
+        dsc.setPassword("baijia*58");
         mpg.setDataSource(dsc);
 
         // 包配置
@@ -107,7 +109,7 @@ public class CodeGeneratorDemo {
         };
 
         // 自定义输出配置
-        cfg.setFileOutConfigList(RewriteOutFiles.getFileOutConfigs(projectPath,pc));
+        cfg.setFileOutConfigList(RewriteOutFiles.getFileOutConfigs(projectPath, pc));
         mpg.setCfg(cfg);
 
         // 配置模板
@@ -125,7 +127,7 @@ public class CodeGeneratorDemo {
         StrategyConfig strategy = new StrategyConfig();
         strategy.setNaming(NamingStrategy.underline_to_camel);
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
-       // strategy.setSuperEntityClass("com.baomidou.ant.common.BaseEntity");
+        strategy.setSuperEntityClass("com.baiwang.cloud.common.model.BaseJsonModel");
         strategy.setEntityLombokModel(true);
         strategy.setRestControllerStyle(true);
         // 公共父类
@@ -141,7 +143,7 @@ public class CodeGeneratorDemo {
         strategy.setNameConvert(new INameConvert() {
             @Override
             public String entityNameConvert(TableInfo tableInfo) {
-                return scanner("表名称:"+tableInfo.getName()+";输入实体名称，如：User");
+                return scanner("表名称:" + tableInfo.getName() + ";输入实体名称，如：User");
             }
 
             @Override
@@ -149,6 +151,7 @@ public class CodeGeneratorDemo {
                 return NamingStrategy.underlineToCamel(field.getName());
             }
         });
+
         mpg.setStrategy(strategy);
         mpg.setTemplateEngine(new MyFreemarkerTemplateEngine(pc));
         mpg.execute();
