@@ -29,7 +29,7 @@ import org.springframework.context.annotation.Profile;
 @Profile({"default", "dev"})
 @RestController
 @Api("错误编码管理")
-@RequestMapping("/mytest/code")
+@RequestMapping("mytest/code")
 public class BwErrorCodeController {
     @Autowired
     private BwErrorCodeServices codeServices;
