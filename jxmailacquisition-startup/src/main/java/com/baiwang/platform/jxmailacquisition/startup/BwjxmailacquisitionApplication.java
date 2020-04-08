@@ -18,7 +18,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableEurekaClient
 @EnableFeignClients(basePackages = {"com.baiwang.platform.jxmailacquisition.integration"})
 @EnableBwLogAop(proxyTargetClass = true)
-
 public class BwjxmailacquisitionApplication {
     private static final Logger logger = LoggerFactory.getLogger(BwjxmailacquisitionApplication.class);
 
