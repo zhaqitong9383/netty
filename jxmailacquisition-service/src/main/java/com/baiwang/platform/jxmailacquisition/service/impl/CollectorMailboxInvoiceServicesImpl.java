@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
  * </p>
  *
  * @author shiqiang
- * @since 2020-04-08
+ * @since 2020-04-16
  */
 @Service
 public class CollectorMailboxInvoiceServicesImpl extends ServiceImpl<CollectorMailboxInvoiceMapper, CollectorMailboxInvoice> implements CollectorMailboxInvoiceServices {

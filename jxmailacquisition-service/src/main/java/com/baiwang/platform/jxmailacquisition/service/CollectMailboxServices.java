@@ -11,7 +11,7 @@ import java.util.List;
  * </p>
  *
  * @author shiqiang
- * @since 2020-04-08
+ * @since 2020-04-16
  */
 public interface CollectMailboxServices extends IService<CollectMailbox> {
     List<CollectMailbox> queryEmailByIdList(List<Long> idList);

@@ -17,7 +17,7 @@ import java.util.List;
  * </p>
  *
  * @author shiqiang
- * @since 2020-04-08
+ * @since 2020-04-16
  */
 @Service
 public class CollectMailboxServicesImpl extends ServiceImpl<CollectMailboxMapper, CollectMailbox> implements CollectMailboxServices {

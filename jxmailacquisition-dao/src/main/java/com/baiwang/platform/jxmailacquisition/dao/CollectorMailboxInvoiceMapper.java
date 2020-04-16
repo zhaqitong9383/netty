@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author shiqiang
- * @since 2020-04-08
+ * @since 2020-04-16
  */
 public interface CollectorMailboxInvoiceMapper extends BaseMapper<CollectorMailboxInvoice> {
 

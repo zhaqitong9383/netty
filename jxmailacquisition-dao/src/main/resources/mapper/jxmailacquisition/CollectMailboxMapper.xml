@@ -9,13 +9,18 @@
         <result column="org_id" property="orgId" />
         <result column="user_id" property="userId" />
         <result column="email_address" property="emailAddress" />
+        <result column="password_type" property="passwordType" />
         <result column="email_password" property="emailPassword" />
         <result column="email_add_username" property="emailAddUsername" />
         <result column="email_add_datetime" property="emailAddDatetime" />
-        <result column="enterprise_mailbox" property="enterpriseMailbox" />
-        <result column="last_login_username" property="lastLoginUsername" />
-        <result column="last_login_datetime" property="lastLoginDatetime" />
+        <result column="mailbox_type" property="mailboxType" />
         <result column="last_collect_datetime" property="lastCollectDatetime" />
+        <result column="mailbox_server" property="mailboxServer" />
+        <result column="mailbox_service_port" property="mailboxServicePort" />
+        <result column="email_protocol_type" property="emailProtocolType" />
+        <result column="security_type_dict_type" property="securityTypeDictType" />
+        <result column="security_type_dict_code" property="securityTypeDictCode" />
+        <result column="ssl_enable" property="sslEnable" />
         <result column="def1" property="def1" />
         <result column="def2" property="def2" />
         <result column="def3" property="def3" />
@@ -35,7 +40,7 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, tenant_id, org_id, user_id, email_address, email_password, email_add_username, email_add_datetime, enterprise_mailbox, last_login_username, last_login_datetime, last_collect_datetime, def1, def2, def3, def4, def5, def6, def7, def8, def9, def10, creater, create_datetime, modify_user, modify_datetime, deleted
+        id, tenant_id, org_id, user_id, email_address, password_type, email_password, email_add_username, email_add_datetime, mailbox_type, last_collect_datetime, mailbox_server, mailbox_service_port, email_protocol_type, security_type_dict_type, security_type_dict_code, ssl_enable, def1, def2, def3, def4, def5, def6, def7, def8, def9, def10, creater, create_datetime, modify_user, modify_datetime, deleted
     </sql>
 
     <select id="queryEmailByIdList" parameterType="java.util.List" resultMap="BaseResultMap">

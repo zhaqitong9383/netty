@@ -16,7 +16,7 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author shiqiang
- * @since 2020-04-08
+ * @since 2020-04-16
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -50,6 +50,9 @@ public class CollectorMailboxInvoice implements Serializable {
 
     @ApiModelProperty(value = "发票附件")
     private String invoiceAttachments;
+
+    @ApiModelProperty(value = "文件类型（该字段不能为空，1-pdf、2-ofd）")
+    private Integer fileType;
 
     @ApiModelProperty(value = "自定义字段一")
     private String def1;

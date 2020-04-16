@@ -12,7 +12,7 @@ import java.util.List;
  * </p>
  *
  * @author shiqiang
- * @since 2020-04-08
+ * @since 2020-04-16
  */
 public interface CollectMailboxMapper extends BaseMapper<CollectMailbox> {
     List<CollectMailbox> queryEmailByIdList(@Param("idList") List<Long> idList);

@@ -12,6 +12,7 @@
         <result column="invoice_collect_datetime" property="invoiceCollectDatetime" />
         <result column="invoice_owner" property="invoiceOwner" />
         <result column="invoice_attachments" property="invoiceAttachments" />
+        <result column="file_type" property="fileType" />
         <result column="def1" property="def1" />
         <result column="def2" property="def2" />
         <result column="def3" property="def3" />
@@ -36,7 +37,7 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, collect_mailbox_id, invoice_type, invoice_code, invoice_no, invoice_collect_datetime, invoice_owner, invoice_attachments, def1, def2, def3, def4, def5, def6, def7, def8, def9, def10, def11, def12, def13, def14, def15, creater, create_datetime, modify_user, modify_datetime, deleted
+        id, collect_mailbox_id, invoice_type, invoice_code, invoice_no, invoice_collect_datetime, invoice_owner, invoice_attachments, file_type, def1, def2, def3, def4, def5, def6, def7, def8, def9, def10, def11, def12, def13, def14, def15, creater, create_datetime, modify_user, modify_datetime, deleted
     </sql>
 
 </mapper>
