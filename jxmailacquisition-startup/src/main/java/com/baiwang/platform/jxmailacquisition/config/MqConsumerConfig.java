@@ -21,22 +21,29 @@ import java.util.Properties;
 @Slf4j
 public class MqConsumerConfig implements CommandLineRunner {
 
-    @Value("${rocketmq.consumer.email.result.receiveGId}")
-    private String gid;
+    @Value("${mailacquisition.mq.consumer.groupId}")
+    private String groupId;
 
-    @Value("${rocketmq.consumer.accessKey}")
+    @Value("${mailacquisition.mq.consumer.accessKey}")
     private String accessKey;
 
-    @Value("${rocketmq.consumer.secretKey}")
+    @Value("${mailacquisition.mq.consumer.secretKey}")
     private String secretKey;
 
-    @Value("${rocketmq.consumer.onsAddr}")
-    private String onsAdress;
+    @Value("${mailacquisition.mq.consumer.onsAddr}")
+    private String onsAddr;
 
-    @Value("${rocketmq.consumer.email.result.receiveTopic}")
-    private String msgTopic;
-    @Value("${rocketmq.consumer.email.result.receiveTag}")
-    private String receiveTag;
+    @Value("${mailacquisition.mq.consumer.topic}")
+    private String topic;
+
+    @Value("${mailacquisition.mq.consumer.tag}")
+    private String tag;
+
+    @Value("${mailacquisition.mq.consumer.maxReconsumeTimes}")
+    private String maxReconsumeTimes;
+
+    @Value("${mailacquisition.mq.consumer.consumeThreadNums}")
+    private String consumeThreadNums;
 
     private Consumer consumer;
 
@@ -57,13 +64,19 @@ public class MqConsumerConfig implements CommandLineRunner {
         log.info("初始化启动消费者！");
         // consumer 实例配置初始化
         Properties properties = new Properties();
-        properties.setProperty(PropertyKeyConst.GROUP_ID, gid);
+        properties.setProperty(PropertyKeyConst.GROUP_ID, groupId);
         properties.setProperty(PropertyKeyConst.AccessKey, accessKey);
         properties.setProperty(PropertyKeyConst.SecretKey, secretKey);
         properties.setProperty(PropertyKeyConst.SendMsgTimeoutMillis, "3000");
-        properties.setProperty(PropertyKeyConst.NAMESRV_ADDR, onsAdress);
+        properties.setProperty(PropertyKeyConst.NAMESRV_ADDR, onsAddr);
+        // 消息处理失败后多久重新拉取消息
+//        properties.put(PropertyKeyConst.SuspendTimeMillis, suspendTimeMillis);
+        // 消息消费失败时的最大重试次数
+        properties.put(PropertyKeyConst.MaxReconsumeTimes, maxReconsumeTimes);
+        // 消费线程数
+        properties.put(PropertyKeyConst.ConsumeThreadNums, consumeThreadNums);
         consumer = ONSFactory.createConsumer(properties);
-        consumer.subscribe(msgTopic, receiveTag, taskConsumer);
+        consumer.subscribe(topic, tag, taskConsumer);
         consumer.start();
         if(!consumer.isStarted()){
             consumer.start();
