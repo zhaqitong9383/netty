@@ -1,6 +1,6 @@
 package com.baiwang.platform.jxmailacquisition.dao;
 
-import com.baiwang.platform.jxmailacquisition.common.entity.CollectMailbox;
+import com.baiwang.platform.jxmailacquisition.common.entity.TscmCollectMailbox;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -12,8 +12,8 @@ import java.util.List;
  * </p>
  *
  * @author shiqiang
- * @since 2020-04-16
+ * @since 2020-04-29
  */
-public interface CollectMailboxMapper extends BaseMapper<CollectMailbox> {
-    List<CollectMailbox> queryEmailByIdList(@Param("idList") List<Long> idList);
+public interface TscmCollectMailboxMapper extends BaseMapper<TscmCollectMailbox> {
+    List<TscmCollectMailbox> queryEmailByIdList(@Param("idList") List<Long> idList);
 }

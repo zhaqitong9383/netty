@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
  * </p>
  *
  * @author shiqiang
- * @since 2020-04-16
+ * @since 2020-04-29
  */
 @RestController
-@RequestMapping("/jxmailacquisition/collect-mailbox")
-public class CollectMailboxController {
+@RequestMapping("/jxmailacquisition/tscm-collect-mailbox")
+public class TscmCollectMailboxController {
 
 }

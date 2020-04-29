@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.baiwang.platform.jxmailacquisition.dao.TscmCollectMailboxMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.baiwang.platform.jxmailacquisition.common.entity.TscmCollectMailbox">
+        <id column="ID" property="id" />
+        <result column="TENANT_ID" property="tenantId" />
+        <result column="ORG_ID" property="orgId" />
+        <result column="USER_ID" property="userId" />
+        <result column="EMAIL_ADDRESS" property="emailAddress" />
+        <result column="PASSWORD_TYPE" property="passwordType" />
+        <result column="EMAIL_PASSWORD" property="emailPassword" />
+        <result column="MAIL_NATURE" property="mailNature" />
+        <result column="LAST_COLLECT_DATE" property="lastCollectDate" />
+        <result column="MAIL_SERVER" property="mailServer" />
+        <result column="MAIL_PORT" property="mailPort" />
+        <result column="MAIL_PROTOCOL_TYPE" property="mailProtocolType" />
+        <result column="IS_SSL" property="isSsl" />
+        <result column="EMAIL_LOGIN_STATE" property="emailLoginState" />
+        <result column="CREATE_BY" property="createBy" />
+        <result column="CREATE_DATE" property="createDate" />
+        <result column="UPDATE_BY" property="updateBy" />
+        <result column="UPDATE_DATE" property="updateDate" />
+        <result column="DEL_FLAG" property="delFlag" />
+        <result column="EXT1" property="ext1" />
+        <result column="EXT2" property="ext2" />
+        <result column="EXT3" property="ext3" />
+        <result column="EXT4" property="ext4" />
+        <result column="EXT5" property="ext5" />
+        <result column="EXT6" property="ext6" />
+        <result column="EXT7" property="ext7" />
+        <result column="EXT8" property="ext8" />
+        <result column="EXT9" property="ext9" />
+        <result column="EXT10" property="ext10" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, TENANT_ID, ORG_ID, USER_ID, EMAIL_ADDRESS, PASSWORD_TYPE, EMAIL_PASSWORD, MAIL_NATURE, LAST_COLLECT_DATE, MAIL_SERVER, MAIL_PORT, MAIL_PROTOCOL_TYPE, IS_SSL, EMAIL_LOGIN_STATE, CREATE_BY, CREATE_DATE, UPDATE_BY, UPDATE_DATE, DEL_FLAG, EXT1, EXT2, EXT3, EXT4, EXT5, EXT6, EXT7, EXT8, EXT9, EXT10
+    </sql>
+
+    <select id="queryEmailByIdList" parameterType="java.util.List" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_scm_collect_mailbox
+        <foreach collection="idList" open="where id in (" item="id" separator="," close=")">
+            #{id}
+        </foreach>
+    </select>
+
+</mapper>
