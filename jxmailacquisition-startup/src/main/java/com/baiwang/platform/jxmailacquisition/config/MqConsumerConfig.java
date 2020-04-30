@@ -55,9 +55,7 @@ public class MqConsumerConfig implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        if(useMqFlag) {
-            this.init();
-        }
+         this.init();
     }
 
     public void init(){
