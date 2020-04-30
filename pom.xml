@@ -5,12 +5,12 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.baiwang.platform</groupId>
-  <artifactId>jxmailacquisition</artifactId>
+  <artifactId>netty</artifactId>
   <version>1.0.0</version>
   <packaging>pom</packaging>
 
-  <name>jxmailacquisition</name>
-  <description>jxmailacquisition project for Spring Boot</description>
+  <name>netty</name>
+  <description>netty project for Spring Boot</description>
 
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -49,32 +49,32 @@
       <!--project self-->
       <dependency>
         <groupId>com.baiwang.platform</groupId>
-        <artifactId>jxmailacquisition-common</artifactId>
+        <artifactId>netty-common</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
         <groupId>com.baiwang.platform</groupId>
-        <artifactId>jxmailacquisition-dao</artifactId>
+        <artifactId>netty-dao</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
         <groupId>com.baiwang.platform</groupId>
-        <artifactId>jxmailacquisition-integration</artifactId>
+        <artifactId>netty-integration</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
         <groupId>com.baiwang.platform</groupId>
-        <artifactId>jxmailacquisition-service</artifactId>
+        <artifactId>netty-service</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
         <groupId>com.baiwang.platform</groupId>
-        <artifactId>jxmailacquisition-web</artifactId>
+        <artifactId>netty-web</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
         <groupId>com.baiwang.platform</groupId>
-        <artifactId>jxmailacquisition-startup</artifactId>
+        <artifactId>netty-startup</artifactId>
         <version>${project.version}</version>
       </dependency>
     </dependencies>
@@ -131,11 +131,7 @@
       <artifactId>spring-boot-configuration-processor</artifactId>
       <optional>true</optional>
     </dependency>
-    <dependency>
-      <groupId>com.baiwang</groupId>
-      <artifactId>invoice-collect-service-api</artifactId>
-      <version>1.1.1</version>
-    </dependency>
+
     <dependency>
       <groupId>com.aliyun.openservices</groupId>
       <artifactId>ons-client</artifactId>
@@ -194,11 +190,11 @@
     </plugins>
   </build>
    <modules>
-    <module>jxmailacquisition-web</module>
-    <module>jxmailacquisition-service</module>
-    <module>jxmailacquisition-dao</module>
-    <module>jxmailacquisition-common</module>
-    <module>jxmailacquisition-integration</module>
-    <module>jxmailacquisition-startup</module>
+    <module>netty-web</module>
+    <module>netty-service</module>
+    <module>netty-dao</module>
+    <module>netty-common</module>
+    <module>netty-integration</module>
+    <module>netty-startup</module>
   </modules>
 </project>
