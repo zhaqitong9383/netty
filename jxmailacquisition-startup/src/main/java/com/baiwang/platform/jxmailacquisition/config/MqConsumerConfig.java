@@ -47,9 +47,6 @@ public class MqConsumerConfig implements CommandLineRunner {
 
     private Consumer consumer;
 
-    @Value("${usemq.flag}")
-    private boolean useMqFlag;
-
     @Autowired
     private TaskConsumer taskConsumer;
 
@@ -79,7 +76,7 @@ public class MqConsumerConfig implements CommandLineRunner {
         if(!consumer.isStarted()){
             consumer.start();
         }
-        log.info("消费者 start success."+consumer.isStarted());
+        log.info("消费者 start success :" + consumer.isStarted());
 
     }
 
