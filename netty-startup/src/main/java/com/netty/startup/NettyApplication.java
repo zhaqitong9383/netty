@@ -13,10 +13,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @SpringBootApplication
 @EnableTransactionManagement(proxyTargetClass = true)
-@ComponentScan(basePackages = {"com.baiwang.platform", "com.baiwang.cloud"})
-@MapperScan(basePackages = {"com.baiwang.platform.jxmailacquisition.dao"})
+@ComponentScan(basePackages = {"com.netty", "com.baiwang.cloud"})
+@MapperScan(basePackages = {"com.netty.dao"})
 @EnableEurekaClient
-@EnableFeignClients(basePackages = {"com.baiwang.platform.jxmailacquisition.integration"})
+@EnableFeignClients(basePackages = {"com.netty.integration"})
 @EnableBwLogAop(proxyTargetClass = true)
 public class NettyApplication {
     private static final Logger logger = LoggerFactory.getLogger(NettyApplication.class);

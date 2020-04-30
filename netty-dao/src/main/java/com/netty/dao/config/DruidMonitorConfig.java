@@ -1,11 +1,5 @@
 package com.netty.dao.config;
 
-/**
- * @Auther: shiqiang
- * @Date: 2018/6/25 19:08
- * @Description:
- */
-
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
